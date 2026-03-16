@@ -519,7 +519,7 @@ moveToElementClick(option);
 public void item_should_be_selected_successfully1() {
 
 System.out.println("Dropdown item selected successfully");
-
+ driver.quit();
 }
 
 }

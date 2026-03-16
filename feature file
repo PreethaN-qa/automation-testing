@@ -19,9 +19,9 @@ Then Form should submit
  
    Examples:
  
-| name | email | phone |Address |
-| preetha | preetha@gmail.com | 8610966352 |guindy,chennai| 
-| preetha1 | preetha1@gmail.com | 8610966352 |chromepet,chennai|    
+| name    | email             | phone       |Address |
+| preetha | preetha@gmail.com | 8610966352  |guindy,chennai| 
+| preetha1 | preetha1@gmail.com | 8610966353  |chromepet,chennai|    
      
      
 Scenario: Upload single file

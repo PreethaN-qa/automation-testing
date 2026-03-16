@@ -20,7 +20,7 @@ public class base {
 public static WebDriver driver;
 
 public static WebDriver launchBrowser() {
-
+  System.setProperty("webdriver.chrome.driver", "C:\\Users\\kiaq\\eclipse-workspace\TestAutomation\\chromedriver.exe");
 driver = new ChromeDriver();
 driver.manage().window().maximize();
 

@@ -1,0 +1,531 @@
+package StepDefintions;
+
+import java.util.Set;
+
+import javax.swing.ActionMap;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import BaseClas.base;
+import io.cucumber.docstring.DocString;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class steps01 extends base{
+
+pages.pom dl = new pages.pom(driver);
+
+@Given("User open application")
+
+public void user_open_application() {
+
+driver.get("https://testautomationpractice.blogspot.com/");
+
+}
+
+@When("User enters name {string}")
+
+public void user_enters_name(String name) throws InterruptedException {
+     Thread.sleep(3000);
+	 dl.name.sendKeys(name);
+
+}
+
+@And("User enters email {string}")
+
+public void user_enters_email(String email) throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.email.sendKeys(email);
+
+}
+
+@And("User enters phone {string}")
+
+public void user_enters_phone(String phone) throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.phone.sendKeys(phone);
+
+}
+
+@And("User enters Address {string}")
+
+public void user_enters_address(String address) throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.address.sendKeys(address);
+
+}
+
+@And("User select the Gender")
+
+public void user_select_the_gender_and_days() throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.male.click();
+	 Thread.sleep(3000);
+	 dl.sunday.click();
+
+}
+
+@And("User select the days")
+
+public void User_select_the_days() throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.sunday.click();
+
+}
+
+@And("User select the Country")
+
+public void user_select_the_country() throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.Country.click();
+	 Thread.sleep(3000);
+	 dl.germany.click();
+
+}
+
+@And("User select the Colors")
+
+public void user_select_the_colors() throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.color.click();
+
+}
+ 
+@And("User select Sorted list")
+public void user_select_sorted_list() throws InterruptedException {
+	Thread.sleep(3000);
+	dl.deer.click();
+}
+
+
+@And ("User select the Date picker1")
+public void User_select_the_Date_picker1() throws InterruptedException {
+Thread.sleep(3000);
+dl.Datapicker1.click();
+}
+
+@And ("User select the Date picker2")
+public void User_select_the_Date_picker2() throws InterruptedException {
+Thread.sleep(3000);
+dl. Datepicker2.click();
+}
+
+@And ("User select the Date")
+public void User_select_the_Date() throws InterruptedException {
+Thread.sleep(3000);
+dl.Selectdate.click();
+}
+
+@And ("User select the uploadfiles")
+public void User_select_the_uploadfiles() throws InterruptedException {
+Thread.sleep(3000);
+dl.uploadfiles.click();
+}
+
+@Then("Form should submit")
+
+public void form_should_submit() {
+
+System.out.println("Form submitted successfully");
+
+}
+
+@When("User upload single file")
+public void user_upload_single_file() {
+
+dl.uploadfiles.sendKeys("C:\\Users\\kiaq\\Documents");
+dl.uploadSingleBtn.click();
+
+}
+@When("User upload multiple files")
+public void user_upload_multiple_files() {
+
+dl.multipleFile.sendKeys("C:\\Users\\kiaq\\Documents");
+dl.multipleFile.sendKeys("C:\\Users\\kiaq\\Documents");
+
+dl.uploadMultipleBtn.click();
+
+}
+
+@Then("File should upload successfully")
+public void file_should_upload_successfully() {
+
+System.out.println("File uploaded successfully");
+
+}
+@Given("user get prize text in static web table")
+public void user_get_prize_text_in_static_web_table() {
+
+System.out.println(gettext(dl.staticTable));
+
+}
+
+
+@When("User selects pagination head")
+public void User_selects_pagination_head()throws InterruptedException {
+
+Thread.sleep(2000);
+dl.Smartphone.click();
+dl.laptopCheck.click();
+dl.tabletCheck.click();
+
+}
+@And("User selects pagination header menu ")
+public void user_selects_pagination_header_menu() throws InterruptedException {
+
+		dl.page1.click();
+		Thread.sleep(2000);
+
+		dl.page2.click();
+		Thread.sleep(2000);
+
+		dl.page3.click();
+		Thread.sleep(2000);
+	
+
+		dl.page4.click();
+}
+
+@Then("pagination should be selected")
+public void pagination_should_be_selected() {
+
+System.out.println("pagination selected successfully");
+
+}
+
+@When("user select the footerlinks")
+public void user_select_the_footerlinks() throws InterruptedException {
+	 Thread.sleep(3000);
+	 dl.home.click();
+	 Thread.sleep(3000);
+	 dl.hiddenelements.click();
+	 Thread.sleep(3000);
+	 dl.downloadfiles.click();
+}
+
+@Then("page footer selected")
+public void page_footer_selected() {
+
+System.out.println("page footer selected");
+
+
+}
+@When("user select tabs {string}")
+public void user_select_tabs(String text) throws InterruptedException {
+
+	 Thread.sleep(3000);
+	 scrollUp();
+	 dl.searchBox.sendKeys(text);
+
+	// click search button
+	 dl.searchButton.click();
+
+
+}
+@Then("tab search should display result")
+public void tab_search_should_display_result() {
+
+System.out.println("Tab search executed successfully");
+
+}
+@When("user select the button start")
+public void user_select_the_button_start() {
+	dl.startbutton.click();
+}
+
+@When("user select the button stop")
+public void user_select_the_button_stop() {
+	dl.stopbutton.click();
+}
+
+@Then("button selected successfully")
+public void button_selected_successfully() {
+	System.out.println("button selected successfully");
+}
+@When("User clicks simple alert")
+public void user_clicks_simple_alert() {
+
+	dl.simpleAlertBtn.click();
+
+}
+
+@When("User close the alert popup")
+public void user_close_the_alert_popup() {
+
+Alert alert = driver.switchTo().alert();
+alert.accept(); // click OK
+
+}
+
+@Then("User click next confirmation alert")
+public void user_click_next_confirmation_alert() {
+
+	dl.confirmAlertBtn.click();
+
+Alert alert = driver.switchTo().alert();
+alert.dismiss(); // cancel alert
+
+}
+String parentWindow;
+
+@When("User clicks new tab button")
+public void user_clicks_new_tab_button() {
+
+	parentWindow = driver.getWindowHandle();
+
+dl.newTabBtn.click();
+
+}
+
+@When("User switch to new window")
+public void user_switch_to_new_window() {
+	
+Set<String> windows = driver.getWindowHandles();
+
+for(String window : windows) {
+
+if(!window.equals(parentWindow)) {
+
+driver.switchTo().window(window);
+
+}
+
+}
+
+}
+
+@Then("User close the new window")
+public void user_close_the_new_window() {
+
+driver.close();
+
+}
+
+@Then("User switch back to main window")
+public void user_switch_back_to_main_window() {
+
+driver.switchTo().window(parentWindow);
+
+}
+@When("User hover on Point Me button")
+public void user_hover_on_point_me_button() throws InterruptedException {
+	hover(dl.pointMe);
+	Thread.sleep(3000);
+
+}
+
+@When("User click mouse over")
+public void user_click_mouse_over() throws InterruptedException {
+
+	jsClick(dl.mobiles);
+	
+	jsClick(dl.laptops);
+	
+
+}
+
+
+
+@Then("Menu should be selected")
+public void menu_should_be_selected() {
+
+System.out.println("Menu selected successfully");
+
+}
+
+@When("User double click on Copy Text button")
+public void user_double_click_on_copy_text_button() {
+
+
+
+Actions act = new Actions(driver);
+
+act.doubleClick(dl.copyTextBtn).perform();
+
+}
+
+@Then("Text should copy to second field")
+public void text_should_copy_to_second_field() {
+
+System.out.println("Copied Text: " + dl.field2.getAttribute("value"));
+
+}
+
+@When("User drag element to drop location")
+public void user_drag_element_to_drop_location() {
+
+Actions act = new Actions(driver);
+
+act.dragAndDrop(dl.dragElement, dl.dropLocation).perform();
+
+}
+
+@Then("Element should drop successfully")
+public void element_should_drop_successfully() {
+
+System.out.println("Drag and Drop completed");
+
+}
+@Given("User select the section1")
+public void user_select_the_section1() {
+dl.Section1.sendKeys("Auto");
+}
+ 
+@When("User click the section2")
+public void user_click_the_section2() {
+	dl.Section2.sendKeys("testing");
+}
+ 
+@And("User Click the section3")
+public void user_click_the_section3() {
+	dl.Section3.sendKeys("paragraph");
+}
+
+@Then("Form should be submitted")
+public void Form_should_be_submitted() {
+
+System.out.println("Form submitted successfully");
+
+}
+
+@Then("Form should be submit")
+public void form_should_be_submit() {
+	System.out.println("form selected successfully");
+}
+@When("User move the price slider")
+public void user_move_the_price_slider() throws InterruptedException {
+
+Actions act = new Actions(driver);
+
+// move slider to right
+act.dragAndDropBy(dl.slider, 100, 0).perform();
+
+Thread.sleep(2000);
+
+}
+
+@Then("Price range should change")
+public void price_range_should_change() {
+
+System.out.println("Slider moved successfully");
+
+}
+
+@When("User click shape")
+public void user_click_shape() {
+
+	dl.circle.click();
+
+	dl.square.click();
+
+	dl.triangle.click();
+
+}
+
+
+@Then("Shape should be selected")
+public void shape_should_be_selected() {
+
+System.out.println("SVG element clicked");
+
+}
+
+
+@Then("Item should be selected")
+public void item_should_be_selected() {
+
+System.out.println("Dropdown item selected");
+ 
+
+}
+
+@When("User open scrolling dropdown")
+public void user_open_scrolling_dropdown() {
+	
+
+dl.dropdownField.click();
+
+}
+
+@Given("User reads mobile labels text")
+public void user_reads_mobile_labels_text() {
+
+for(WebElement label : dl.mobileLabels)
+{
+System.out.println("Mobile Label : " + label.getText());
+}
+
+}
+
+@When("User clicks laptop links one by one")
+public void user_clicks_laptop_links() throws InterruptedException {
+
+	dl.apple.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+    dl.lenevo.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+    dl.dell.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+}
+
+
+
+@When("User clicks broken links")
+public void user_clicks_broken_links() throws InterruptedException {
+
+	dl.error1.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+    dl.error2.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+    dl.error3.click();
+    driver.navigate().back();
+    Thread.sleep(3000);
+    dl.error4.click();
+    driver.navigate().back();
+}
+
+
+
+@Then("Labels and links verification completed")
+public void labels_links_verification_completed() {
+
+System.out.println("Labels and Links executed successfully");
+
+}
+
+
+@When("User select {string} from dropdown1")
+public void user_select_from_dropdown1(String item) {
+
+WebElement dropdown = dl.dropdownField;
+moveToElementClick(dropdown);
+
+WebElement option = driver.findElement(By.cssSelector("div[id='dropdown'] div:nth-child(1)"));
+moveToElementClick(option);
+
+}
+
+@Then("Item should be selected successfully1")
+public void item_should_be_selected_successfully1() {
+
+System.out.println("Dropdown item selected successfully");
+
+}
+
+}
+
+
+
+
+
+

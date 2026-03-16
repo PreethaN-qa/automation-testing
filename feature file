@@ -115,7 +115,7 @@ Scenario: Select item from dropdown
 When User select "Item 1" from dropdown1
 Then Item should be selected successfully1
 
-Scenario: Upload multiple files
+Scenario: check footer links
 When user select the footerlinks 
 Then page footer selected 
 

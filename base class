@@ -1,0 +1,176 @@
+package BaseClas;
+
+import java.time.Duration;
+import java.util.Set;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class base {
+
+public static WebDriver driver;
+
+public static WebDriver launchBrowser() {
+
+driver = new ChromeDriver();
+driver.manage().window().maximize();
+
+return driver;
+
+}
+
+
+
+	// click
+	public static void click(WebElement element) {
+		element.click();
+	}
+
+	public static void sendkeys(WebElement element, String value) {
+		element.clear();
+		element.sendKeys(value);
+	}
+	// Implicit Wait 
+	public static void waitimplicit() {
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+	}
+	// Navigate to URL
+	public static void navigateref(String url) {
+	    driver.navigate().to(url);
+	}
+	public void switchToLatestWindow() {
+	    for (String window : driver.getWindowHandles()) {
+	        driver.switchTo().window(window);
+	    }
+	}
+
+	//scrollup
+
+	public void actionSendKeys(WebElement element, String value) throws InterruptedException {
+
+	    Actions act = new Actions(driver);
+	    act.moveToElement(element).click().perform();
+	    Thread.sleep(1000);
+
+	    element.clear();
+	    Thread.sleep(500);
+
+	    act.sendKeys(value).perform();
+	}
+
+
+	//Hover method
+	public void hover(WebElement element) {
+	 Actions act = new Actions(driver);
+	 act.moveToElement(element).perform();
+	}
+
+	//JS click method (when normal click not working)
+	public void jsClick(WebElement element) {
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
+	 js.executeScript("arguments[0].click();", element);
+	}
+	//newtab
+
+	public void switchToNewTab() {
+
+	    Set<String> allTabs = driver.getWindowHandles();
+	    for (String tab : allTabs) {
+	        driver.switchTo().window(tab);
+	    }
+	}
+
+	public void scrollUp() {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollTo(0,0)");
+	}
+
+
+
+	public void scrollToElement(WebElement element) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+	
+
+	// Close Browser
+	public static void close() {
+	    driver.close();
+	}
+
+	//  Quit Browser
+	public static void quit() {
+	    driver.quit();
+	   
+	}
+	public boolean isElementPresent(WebElement element) {
+	    try {
+	        return element.isDisplayed();
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+	    // DROP DOWN
+	    public static void dropdown1(WebElement element, int str) {
+	    Select s=new Select(element);
+	    s.selectByIndex(str);
+	    }
+	     
+	    public static void dropdown2(WebElement element, String str) {
+	    Select s=new Select(element);
+	    s.selectByValue(str);
+	    }
+	     
+	    public static void dropdown3(WebElement element, String str) {
+	    Select s=new Select(element);
+	    s.deselectByVisibleText(str); 
+	    
+	}
+	    
+	    public void uploadFile(WebElement upload, String filepath) {
+	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    	wait.until(ExpectedConditions.visibilityOf(upload));
+	    	upload.sendKeys(filepath);
+
+	    	}
+	    
+
+	    	public void scrollDown() {
+
+	    	JavascriptExecutor js = (JavascriptExecutor) driver;
+	    	js.executeScript("window.scrollBy(0,500)");
+	    	}  
+	    	
+	    	
+	    	
+	    	public static String gettext(WebElement element) {
+
+	    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    		return wait.until(ExpectedConditions.visibilityOf(element)).getText();
+
+	    		}
+	    	
+	    	
+	    	
+	    	public void moveToElementClick(WebElement element) {
+
+	    		Actions action = new Actions(driver);
+	    		action.moveToElement(element).click().perform();
+
+	    		}
+	    	}
+
+
+	
+
+

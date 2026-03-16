@@ -1,0 +1,122 @@
+Feature: Automation practice Testing
+ 
+Scenario Outline: Validate form with input field
+ 
+Given User open application
+When User enters name "<name>"
+And User enters email "<email>"
+And User enters phone "<phone>"
+And User enters Address "<Address>"
+And User select the Gender 
+And User select the days
+And User select the Country
+And User select the Colors
+And User select Sorted list
+And User select the Date picker1
+And User select the Date picker2
+And User select the Date 
+Then Form should submit
+ 
+   Examples:
+ 
+| name | email | phone |Address |
+| preetha | preetha@gmail.com | 8610966352 |guindy,chennai| 
+| preetha1 | preetha1@gmail.com | 8610966352 |chromepet,chennai|    
+     
+     
+Scenario: Upload single file
+When User upload single file
+Then File should upload successfully
+
+Scenario: Upload multiple files
+When User upload multiple files
+Then File should upload successfully
+ 
+ Scenario Outline: Select product from pagination table
+ Given user get prize text in static web table
+ When User selects pagination head
+ Then pagination should be selected  
+
+
+Scenario: form should be filleds
+Given User select the section1 
+When User click the section2 
+And User Click the section3 
+Then Form should be submit  
+
+
+Scenario Outline: Search text in Tabs section
+When user select tabs "<searchText>"   
+Then tab search should display result
+
+Examples:
+| searchText |
+| Selenium |
+| Java |
+| Testing |
+
+Scenario: User selects dynamic button
+When user select the button start 
+And user select the button stop
+Then button selected successfully
+
+Scenario: Handle simple alert and confirmation alert
+
+When User clicks simple alert
+And User close the alert popup
+Then User click next confirmation alert
+
+Scenario: Open new window and close it
+
+Given User open application
+When User clicks new tab button
+And User switch to new window
+Then User close the new window
+And User switch back to main window
+
+
+Scenario Outline: Select option from mouse hover menu
+
+When User hover on Point Me button
+And User click mouse over
+Then Menu should be selected
+
+
+Scenario: Double click to copy text
+
+When User double click on Copy Text button
+Then Text should copy to second field
+
+
+Scenario: Drag element and drop to target
+
+When User drag element to drop location
+Then Element should drop successfully
+
+ Scenario: Move slider to change price range
+When User move the price slider
+Then Price range should change
+
+Scenario: Click SVG shapes
+When User click shape  
+Then Shape should be selected
+
+
+Scenario: Verify mobile labels and links
+
+Given User reads mobile labels text
+When User clicks laptop links one by one
+And User clicks broken links  
+Then Labels and links verification completed 
+
+
+Scenario: Select item from dropdown
+
+When User select "Item 1" from dropdown1
+Then Item should be selected successfully1
+
+Scenario: Upload multiple files
+When user select the footerlinks 
+Then page footer selected 
+
+ 

@@ -1,0 +1,331 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class pom {
+
+WebDriver driver;
+
+public pom(WebDriver driver) {
+
+this.driver = driver;
+PageFactory.initElements(driver, this);
+
+}
+
+@FindBy(id="name")
+public WebElement name;
+
+@FindBy(id="email")
+public WebElement email;
+
+@FindBy(id="phone")
+public WebElement phone;
+
+@FindBy(id="textarea")
+public WebElement address;
+
+@FindBy(id="male")
+public WebElement male;
+
+@FindBy(id="sunday")
+public WebElement sunday;
+
+@FindBy(xpath = "//select[@id='country']")
+public WebElement Country;
+ 
+@FindBy(xpath = "//*[@value='germany']")
+public WebElement germany;
+ 
+@FindBy(xpath = "//*[@value=\"red\"]")
+public WebElement color;
+
+@FindBy(xpath = "//*[@value=\"red\"]")
+public WebElement red;
+ 
+@FindBy(xpath = "//*[@value=\"deer\"]")
+public WebElement deer;
+ 
+@FindBy(xpath = "//input[@id='datepicker']")
+public WebElement Datapicker1;
+ 
+@FindBy(xpath = "//a[@class='ui-state-default ui-state-highlight ui-state-hover']")
+public WebElement Selectdate;
+ 
+@FindBy(name = "SelectedDate")
+public WebElement Datepicker2;
+ 
+@FindBy(xpath = "//a[@class='ui-state-default ui-state-hover']")
+public WebElement Selectdate2;
+
+//choosefile
+@FindBy(xpath = "//input[@id='singleFileInput']")
+public WebElement uploadfiles;
+
+
+//Upload button
+@FindBy(xpath="//button[text()='Upload Single File']")
+public WebElement uploadSingleBtn;
+
+//Multiple file input
+@FindBy(xpath="//input[@id='multipleFilesInput']")
+public WebElement multipleFile;
+
+//Upload multiple button
+@FindBy(xpath="//button[text()='Upload Multiple Files']")
+public WebElement uploadMultipleBtn;
+
+
+//pagination
+
+@FindBy(xpath="//tbody/tr[1]/td[4]/input[1]")
+public WebElement Smartphone;
+
+//Pagination buttons
+@FindBy(xpath="//a[@class='active']")
+public WebElement page1;
+
+@FindBy(xpath="//a[@class='active']")
+public WebElement page2;
+
+@FindBy(xpath="//a[@class='active']")
+public WebElement page3;
+
+@FindBy(xpath="//a[@class='active']")
+public WebElement page4;
+
+
+@FindBy(xpath="//tbody/tr[2]/td[4]/input[1]")
+public WebElement laptopCheck;
+
+@FindBy(xpath="//tbody/tr[3]/td[4]/input[1]")
+public WebElement tabletCheck;
+//form
+@FindBy(xpath="//input[@id='input1']")
+public WebElement section1;
+
+@FindBy(xpath="//input[@id='input2']]")
+public WebElement section2;
+
+@FindBy(xpath="//input[@id='input3']")
+public WebElement section3;
+
+
+@FindBy(xpath="//button[@id='btn1']")
+public WebElement submit1;
+
+@FindBy(xpath="//button[@id='btn2']")
+public WebElement submit2;
+
+@FindBy(xpath="//button[@id='btn3']")
+public WebElement submit3;
+
+
+@FindBy(xpath="//div[@id='PageList1']//a[normalize-space()='Home']")
+public WebElement home;
+
+@FindBy(xpath="//a[normalize-space()='Hidden Elements & AJAX']")
+public WebElement hiddenelements;
+
+@FindBy(xpath="//a[normalize-space()='Download Files']")
+public WebElement downloadfiles;
+
+
+//Tabs section search box
+@FindBy(xpath="//input[@id='Wikipedia1_wikipedia-search-input']")
+public WebElement searchBox;
+
+//Search button
+@FindBy(xpath="//input[@type='submit']")
+public WebElement searchButton;
+
+//start&stop
+//Tabs section search box
+@FindBy(xpath="//input[@id='Wikipedia1_wikipedia-search-input']")
+public WebElement startbutton;
+
+//Search button
+@FindBy(xpath="//input[@type='submit']")
+public WebElement stopbutton;
+
+//Simple Alert button
+@FindBy(xpath="//button[@id='alertBtn']")
+public WebElement simpleAlertBtn;
+
+//Confirmation Alert button
+@FindBy(xpath="//button[@id='confirmBtn']")
+public WebElement confirmAlertBtn;
+
+
+
+//Confirmation Alert button
+@FindBy(xpath="//button[@id='promptBtn']")
+public WebElement promptAlertBtn;
+
+//New Tab button
+@FindBy(xpath="//button[text()='New Tab']")
+public WebElement newTabBtn;
+
+@FindBy(xpath = "(//td[text()='Learn Selenium']/following-sibling::td)[3]")
+public WebElement staticTable;
+
+@FindBy(xpath="//button[text()='Point Me']")
+public WebElement pointMe;
+
+@FindBy(xpath="//a[text()='Mobiles']")
+public WebElement mobiles;
+
+// Laptops option
+@FindBy(xpath="//a[text()='Laptops']")
+public WebElement laptops;
+
+
+//Copy text button
+@FindBy(xpath="//button[text()='Copy Text']")
+public WebElement copyTextBtn;
+
+//Field1 text
+@FindBy(xpath="//input[@id='field1']")
+public WebElement field1;
+
+//Field2 text
+@FindBy(xpath="//input[@id='field2']")
+public WebElement field2;
+
+//Drag element
+@FindBy(xpath="//p[text()='Drag me to my target']")
+public WebElement dragElement;
+
+//Drop location
+@FindBy(xpath="//div[@id='droppable']")
+public WebElement dropLocation;
+
+
+@FindBy(id = "input1")
+public WebElement Section1;
+ 
+@FindBy(id = "input2")
+public WebElement Section2;
+ 
+@FindBy(id = "input3")
+public WebElement Section3;
+ 
+// Web Tab
+@FindBy(xpath="//input[@id='Wikipedia1_wikipedia-search-input']")
+public WebElement Input;
+ 
+@FindBy(xpath="//input[@type='submit']")
+public WebElement Search;
+
+//Slider handle
+@FindBy(xpath="//span[contains(@class,'ui-slider-handle')]")
+public WebElement slider;
+
+
+//Scrolling dropdown
+@FindBy(xpath="//input[@placeholder='Select an item']")
+public WebElement dropdown;
+
+@FindBy(xpath = "(//td[text()='Learn Selenium']/following-sibling::td)[3]")
+public WebElement staticTable1;
+ 
+@FindBy(xpath = "(//td[text()='Internet Explorer']/following-sibling::td)[2]")
+public WebElement dynamicTable;
+ 
+@FindBy(xpath = "(//ul[@class='pagination']//a)[3]")
+public WebElement pageButton;
+ 
+@FindBy(xpath = "//table[@id='productTable']/tbody[1]/tr[3]/td[4]/input[1]")
+public WebElement selectBox;
+
+//Dropdown field
+@FindBy(xpath="//input[@placeholder='Select an item']")
+public WebElement dropdownField;
+
+
+@FindBy(xpath="//h3[text()='Mobile Labels']/following-sibling::div/p")
+public List<WebElement> mobileLabels;
+
+@FindBy(xpath="//h3[text()='Laptop Links']/following-sibling::div/a")
+public List<WebElement> laptopLinks;
+
+@FindBy(xpath="//h3[text()='Broken Links']/following-sibling::div/a")
+public List<WebElement> brokenLinks;
+
+@FindBy(xpath="//input[@placeholder='Select an item']")
+public WebElement dropdownField1;
+
+@FindBy(xpath = "//a[@id='apple']")
+public WebElement apple;
+ 
+@FindBy(xpath = "//*[@id=\"lenovo\"]")
+public WebElement lenevo;
+
+
+@FindBy(xpath="//*[@id=\"dell\"]")
+public WebElement dell;
+
+
+@FindBy(xpath="//a[normalize-space()='Errorcode 400']")
+public WebElement error1;
+
+@FindBy(xpath = "//a[normalize-space()='Errorcode 401']")
+public WebElement error2;
+ 
+@FindBy(xpath = "//a[normalize-space()='Errorcode 403']")
+public WebElement error3;
+
+
+@FindBy(xpath="//a[normalize-space()='Errorcode 404']")
+public WebElement error4;
+
+@FindBy(css="circle[cx='15']")
+public List<WebElement> circle;
+
+@FindBy(css="rect[x='3']")
+public List<WebElement> square;
+
+@FindBy(css="polygon[points='15,3 3,27 27,27']")
+public List<WebElement> triangle;
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
